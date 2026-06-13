@@ -44,15 +44,11 @@ export const menuItemType = defineType({
           type: 'array',
           of: [
             defineArrayMember({
-              name: 'choiceString',
-              type: 'string',
-            }),
-            defineArrayMember({
-              name: 'choiceObject',
+              name: 'choice',
               type: 'object',
               fields: [
-                defineField({ name: 'name', type: 'string' }),
-                defineField({ name: 'price', type: 'number' }),
+                defineField({ name: 'name', title: 'Nama Pilihan', type: 'string' }),
+                defineField({ name: 'price', title: 'Tambahan Harga', type: 'number', description: 'Kosongkan jika tidak ada tambahan harga' }),
               ],
             }),
           ],
