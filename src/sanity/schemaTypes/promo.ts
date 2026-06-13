@@ -9,7 +9,7 @@ export const promoType = defineType({
       name: 'badge',
       title: 'Badge (e.g., Promo Mahasiswa)',
       type: 'string',
-      validation: (rule) => rule.required(),
+      description: 'Opsional. Muncul di atas judul.',
     }),
     defineField({
       name: 'title',
@@ -21,7 +21,7 @@ export const promoType = defineType({
       name: 'desc',
       title: 'Description',
       type: 'text',
-      validation: (rule) => rule.required(),
+      description: 'Opsional. Kosongkan jika promo hanya berupa gambar poster.',
     }),
     defineField({
       name: 'image',
