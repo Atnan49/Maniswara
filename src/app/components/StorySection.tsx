@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
-
+import { useEffect, useState } from "react";
+import { client } from "../../sanity/lib/client";
+import { getActivePromosQuery } from "../../sanity/lib/queries";
+import { urlForImage } from "../../sanity/lib/image";
 const promos = [
   {
     badge: "Promo Mahasiswa",
@@ -24,6 +27,22 @@ const promos = [
 ];
 
 export function StorySection() {
+  const [activePromos, setActivePromos] = useState<any[]>(promos);
+
+  useEffect(() => {
+    async function fetchPromos() {
+      try {
+        const fetched = await client.fetch(getActivePromosQuery);
+        if (fetched && fetched.length > 0) {
+          setActivePromos(fetched);
+        }
+      } catch (error) {
+        console.error("Failed to fetch promos from Sanity:", error);
+      }
+    }
+    fetchPromos();
+  }, []);
+
   return (
     <section id="story" className="bg-[#F4EFE3]">
       <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
@@ -90,26 +109,36 @@ export function StorySection() {
               <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#F4EFE3] to-transparent z-10 pointer-events-none"></div>
 
               <div className="animate-marquee gap-4 pr-4">
-                {[...promos, ...promos].map((promo, i) => (
-                  <div key={i} className="w-[280px] max-w-[85vw] shrink-0 p-5 rounded-2xl border border-[#C1652F]/20 bg-[#C1652F]/5 relative overflow-hidden group hover:bg-[#C1652F]/10 transition-colors cursor-pointer">
-                    <div
-                      className="absolute top-0 right-0 bg-[#C1652F] text-[#F1ECD9] px-3 py-1 rounded-bl-2xl"
-                      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}
-                    >
-                      {promo.badge}
-                    </div>
-                    <h3
-                      className="text-[#C1652F] mb-1.5 pr-14"
-                      style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px", fontWeight: 700, lineHeight: 1.2 }}
-                    >
-                      {promo.title}
-                    </h3>
-                    <p
-                      className="text-[#2A2620]/70"
-                      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", lineHeight: 1.5 }}
-                    >
-                      {promo.desc}
-                    </p>
+                {[...activePromos, ...activePromos].map((promo, i) => (
+                  <div key={i} className={`w-[280px] max-w-[85vw] shrink-0 ${promo.image ? 'p-0 h-[200px]' : 'p-5 min-h-[140px]'} rounded-2xl border border-[#C1652F]/20 bg-[#C1652F]/5 relative overflow-hidden group hover:bg-[#C1652F]/10 transition-colors cursor-pointer flex flex-col justify-center`}>
+                    {promo.image ? (
+                      <img src={urlForImage(promo.image).url()} alt={promo.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <>
+                        {promo.badge && (
+                          <div
+                            className="absolute top-0 right-0 bg-[#C1652F] text-[#F1ECD9] px-3 py-1 rounded-bl-2xl"
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "10px", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}
+                          >
+                            {promo.badge}
+                          </div>
+                        )}
+                        <h3
+                          className="text-[#C1652F] mb-2 pr-12"
+                          style={{ fontFamily: "'Playfair Display', serif", fontSize: "20px", fontWeight: 700 }}
+                        >
+                          {promo.title}
+                        </h3>
+                        {promo.desc && (
+                          <p
+                            className="text-[#2A2620]/75"
+                            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", lineHeight: 1.6 }}
+                          >
+                            {promo.desc}
+                          </p>
+                        )}
+                      </>
+                    )}
                   </div>
                 ))}
               </div>
