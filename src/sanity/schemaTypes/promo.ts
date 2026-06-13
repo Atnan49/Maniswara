@@ -24,6 +24,14 @@ export const promoType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'image',
+      title: 'Promo / Event Image',
+      type: 'image',
+      options: {
+        hotspot: true, // Allows admin to crop/focus the image
+      },
+    }),
+    defineField({
       name: 'isActive',
       title: 'Active Status',
       type: 'boolean',
