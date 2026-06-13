@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType, defineArrayMember } from 'sanity'
 
 export const menuItemType = defineType({
   name: 'menuItem',
@@ -43,11 +43,11 @@ export const menuItemType = defineType({
           title: 'Choices',
           type: 'array',
           of: [
-            defineType({
+            defineArrayMember({
               name: 'choiceString',
               type: 'string',
             }),
-            defineType({
+            defineArrayMember({
               name: 'choiceObject',
               type: 'object',
               fields: [
