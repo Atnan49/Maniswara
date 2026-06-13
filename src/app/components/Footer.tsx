@@ -37,13 +37,13 @@ export function Footer() {
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px" }}
             >
               <Instagram size={16} />
-              @maniswara_
+              @maniswara.soc
             </a>
             <p
               className="text-[#F1ECD9]/30"
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px" }}
             >
-              © 2024 Maniswara. All rights reserved.
+              © 2026 Maniswara. All rights reserved.
             </p>
           </div>
         </div>
