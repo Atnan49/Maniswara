@@ -2,28 +2,48 @@ import { motion } from "motion/react";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1780317307778-a853511d11e7?w=600&h=800&fit=crop&auto=format",
-    alt: "Kursi nyaman dan kue di Maniswara",
+    src: "/images/ig-4.jpg",
+    alt: "Maniswara Instagram Photo 1",
     span: "row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1620124302502-9143f273d860?w=600&h=400&fit=crop&auto=format",
-    alt: "Roti artisanal Maniswara",
+    src: "/images/ig-5.jpg",
+    alt: "Maniswara Instagram Photo 2",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1514053376103-51c19c5c8291?w=600&h=400&fit=crop&auto=format",
-    alt: "Minuman segar Maniswara",
+    src: "/images/ig-6.jpg",
+    alt: "Maniswara Instagram Photo 3",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1681477526380-fc3bca2bad72?w=600&h=500&fit=crop&auto=format",
-    alt: "Bagel sandwich Maniswara",
+    src: "/images/ig-7.jpg",
+    alt: "Maniswara Instagram Photo 4",
     span: "",
   },
   {
-    src: "https://images.unsplash.com/photo-1771422574848-d8d25740e728?w=600&h=500&fit=crop&auto=format",
-    alt: "Latte art Maniswara",
+    src: "/images/ig-8.jpg",
+    alt: "Maniswara Instagram Photo 5",
+    span: "row-span-2",
+  },
+  {
+    src: "/images/ig-9.jpg",
+    alt: "Maniswara Instagram Photo 6",
+    span: "",
+  },
+  {
+    src: "/images/ig-10.jpg",
+    alt: "Maniswara Instagram Photo 7",
+    span: "",
+  },
+  {
+    src: "/images/ig-11.jpg",
+    alt: "Maniswara Instagram Photo 8",
+    span: "",
+  },
+  {
+    src: "/images/ig-12.jpg",
+    alt: "Maniswara Instagram Photo 9",
     span: "",
   },
 ];

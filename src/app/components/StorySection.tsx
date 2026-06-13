@@ -156,22 +156,22 @@ export function StorySection() {
             <div className="grid grid-cols-2 gap-2 md:gap-3">
               <div className="col-span-2 rounded-2xl overflow-hidden bg-[#2A2620] h-[200px] sm:h-[240px] md:h-[280px]">
                 <img
-                  src="https://images.unsplash.com/photo-1780815227186-9adce46d69f6?w=800&h=560&fit=crop&auto=format"
-                  alt="Bunga, kopi, dan pastry di meja kayu Maniswara"
+                  src="/images/ig-1.jpg"
+                  alt="Suasana dan hidangan Maniswara"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden bg-[#2A2620] h-[140px] md:h-[180px]">
                 <img
-                  src="https://images.unsplash.com/photo-1620146344904-097a0002d797?w=400&h=360&fit=crop&auto=format"
-                  alt="Roti artisanal Maniswara"
+                  src="/images/ig-2.jpg"
+                  alt="Hidangan spesial Maniswara"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-2xl overflow-hidden bg-[#2A2620] h-[140px] md:h-[180px]">
                 <img
-                  src="https://images.unsplash.com/photo-1771422574848-d8d25740e728?w=400&h=360&fit=crop&auto=format"
-                  alt="Latte art Maniswara"
+                  src="/images/ig-3.jpg"
+                  alt="Detail suasana Maniswara"
                   className="w-full h-full object-cover"
                 />
               </div>
