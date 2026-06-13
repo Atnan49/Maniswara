@@ -110,7 +110,7 @@ export function StorySection() {
 
               <div className="animate-marquee gap-4 pr-4">
                 {[...activePromos, ...activePromos].map((promo, i) => (
-                  <div key={i} className={`w-[280px] max-w-[85vw] shrink-0 ${promo.image ? 'p-0 h-[200px]' : 'p-5 min-h-[140px]'} rounded-2xl border border-[#C1652F]/20 bg-[#C1652F]/5 relative overflow-hidden group hover:bg-[#C1652F]/10 transition-colors cursor-pointer flex flex-col justify-center`}>
+                  <div key={i} className={`w-[280px] max-w-[85vw] shrink-0 h-[140px] ${promo.image ? 'p-0' : 'p-5'} rounded-2xl border border-[#C1652F]/20 bg-[#C1652F]/5 relative overflow-hidden group hover:bg-[#C1652F]/10 transition-colors cursor-pointer flex flex-col justify-center`}>
                     {promo.image ? (
                       <img src={urlForImage(promo.image).url()} alt={promo.title} className="w-full h-full object-cover" />
                     ) : (
@@ -131,7 +131,7 @@ export function StorySection() {
                         </h3>
                         {promo.desc && (
                           <p
-                            className="text-[#2A2620]/75"
+                            className="text-[#2A2620]/75 line-clamp-2"
                             style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", lineHeight: 1.6 }}
                           >
                             {promo.desc}
