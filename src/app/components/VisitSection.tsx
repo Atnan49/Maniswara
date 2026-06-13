@@ -61,12 +61,12 @@ export function VisitSection() {
               className="text-[#F1ECD9]/65"
               style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", lineHeight: 1.7 }}
             >
-              Jl. Contoh No. 12,<br />
-              Bandung, Jawa Barat<br />
-              40123
+              Jln. Rajawali Raya No.31<br />
+              Nilagraha Gonilan, UMS<br />
+              Sukoharjo
             </p>
             <a
-              href="https://maps.google.com"
+              href="https://maps.app.goo.gl/LpxAbZWXh6i9vwbv6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 mt-5 text-[#C1652F] hover:text-[#D4763F] transition-colors"
@@ -158,56 +158,36 @@ export function VisitSection() {
                 <span className="text-[#C1652F]">WA</span> +62 812-3456-7890
               </a>
               <a
-                href="https://instagram.com/maniswara_"
+                href="https://www.instagram.com/maniswara.soc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-[#F1ECD9]/70 hover:text-[#F1ECD9] transition-colors"
                 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}
               >
-                <Instagram size={14} className="text-[#C1652F]" /> @maniswara_
+                <Instagram size={14} className="text-[#C1652F]" /> @maniswara.soc
               </a>
             </div>
           </motion.div>
         </div>
 
-        {/* Map placeholder */}
+        {/* Google Maps Embed */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
           className="mt-8 rounded-2xl overflow-hidden"
-          style={{ height: "280px" }}
+          style={{ height: "350px" }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1768400777008-148b0aae6346?w=1200&h=560&fit=crop&auto=format"
-            alt="Suasana Maniswara"
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div
-            className="relative -top-full h-full flex items-center justify-center"
-            style={{ background: "rgba(47,59,44,0.65)" }}
-          >
-            <div className="text-center">
-              <p
-                className="text-[#F1ECD9]"
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(24px, 4vw, 40px)",
-                  fontWeight: 700,
-                  fontStyle: "italic",
-                }}
-              >
-                "A place to begin again."
-              </p>
-              <p
-                className="text-[#F1ECD9]/60 mt-2"
-                style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}
-              >
-                — Maniswara
-              </p>
-            </div>
-          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=Maniswara,+Jln.+Rajawali+Raya+No.31,+Gonilan,+Kartasura&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </motion.div>
       </div>
     </section>

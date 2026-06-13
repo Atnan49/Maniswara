@@ -1,11 +1,21 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import menuData from "../../../menu.json";
 
 interface MenuItem {
   name: string;
-  desc: string;
-  price: number;
+  description: string;
+  price: number | null;
   highlight?: boolean;
+}
+
+interface RawCategory {
+  id: string;
+  title: string;
+  subtitle?: string;
+  items: MenuItem[];
 }
 
 interface MenuCategory {
@@ -18,91 +28,24 @@ interface MenuCategory {
   items: MenuItem[];
 }
 
-const categories: MenuCategory[] = [
-  {
-    id: "bagels",
-    label: "Bagel's",
-    sectionBadge: "Bagel's Sections",
-    bgColor: "#F4EFE3",
-    textColor: "#2A2620",
-    badgeColor: "#C1652F",
-    items: [
-      { name: "Plain Bagel", desc: "Bagel klasik dengan butter & selai pilihan", price: 25000 },
-      { name: "Smoked Beef Bagel", desc: "Smoked beef, lettuce, tomat, cream cheese", price: 48000, highlight: true },
-      { name: "Cream Cheese Bagel", desc: "Cream cheese homemade, herb, garlic butter", price: 38000 },
-      { name: "Avocado Bagel", desc: "Avocado mash, lemon, microgreens, red pepper flakes", price: 45000, highlight: true },
-      { name: "Egg & Cheese Bagel", desc: "Scrambled egg, cheddar melt, mayo", price: 42000 },
-      { name: "Tuna Melt Bagel", desc: "Tuna salad, tomat, cheddar, dibakar sempurna", price: 46000 },
-    ],
-  },
-  {
-    id: "pasta",
-    label: "Pasta",
-    sectionBadge: "Pasta Sections",
-    bgColor: "#2F3B2C",
-    textColor: "#F1ECD9",
-    badgeColor: "#C1652F",
-    items: [
-      { name: "Aglio e Olio", desc: "Spaghetti, bawang putih, chili flakes, parsley", price: 48000 },
-      { name: "Carbonara", desc: "Pasta creamy, smoked beef, kuning telur, parmesan", price: 55000, highlight: true },
-      { name: "Bolognese", desc: "Ragu daging sapi, tomat san marzano, basilico", price: 58000, highlight: true },
-      { name: "Arrabbiata", desc: "Saus tomat pedas, bawang putih, chili, parsley", price: 48000 },
-      { name: "Pesto Genovese", desc: "Basil pesto homemade, cherry tomat, parmesan", price: 55000 },
-      { name: "Pasta Alfredo", desc: "Saus creamy butter parmesan, pappardelle", price: 52000 },
-    ],
-  },
-  {
-    id: "sandwich",
-    label: "Sandwich",
-    sectionBadge: "Sandwich Sections",
-    bgColor: "#5E5F4C",
-    textColor: "#F1ECD9",
-    badgeColor: "#C1652F",
-    items: [
-      { name: "Classic Club", desc: "Smoked beef, telur, selada, tomat, mayo, sourdough", price: 48000 },
-      { name: "Smoked Beef Melt", desc: "Smoked beef, cheddar melt, pickles, mustard", price: 52000, highlight: true },
-      { name: "Caprese Toast", desc: "Mozzarella segar, tomat heirloom, basil, balsamic", price: 45000 },
-      { name: "Chicken Avocado", desc: "Chicken breast panggang, avocado, sriracha mayo", price: 58000, highlight: true },
-      { name: "Mushroom Swiss", desc: "Jamur sauté, keju Swiss, thyme, brioche", price: 50000 },
-    ],
-  },
-  {
-    id: "pancake",
-    label: "Pancake",
-    sectionBadge: "Pancake Sections",
-    bgColor: "#F4EFE3",
-    textColor: "#2A2620",
-    badgeColor: "#C1652F",
-    items: [
-      { name: "Classic Buttermilk", desc: "Pancake klasik dengan maple syrup & butter", price: 38000 },
-      { name: "Blueberry Stack", desc: "Blueberry segar, whipped cream, blueberry compote", price: 48000, highlight: true },
-      { name: "Banana Caramel", desc: "Pisang karamel, hazelnut, oat granola", price: 48000 },
-      { name: "Red Velvet", desc: "Pancake red velvet, cream cheese drizzle", price: 52000, highlight: true },
-      { name: "Tiramisu Stack", desc: "Mascarpone cream, espresso soaked, cocoa dusting", price: 55000, highlight: true },
-      { name: "Matcha Cream", desc: "Pancake matcha, red bean paste, whipped cream", price: 50000 },
-    ],
-  },
-  {
-    id: "drinks",
-    label: "Drinks",
-    sectionBadge: "Drink Sections",
-    bgColor: "#2F3B2C",
-    textColor: "#F1ECD9",
-    badgeColor: "#C1652F",
-    items: [
-      { name: "Espresso", desc: "Single origin, extracted untuk rasa terbaik", price: 28000 },
-      { name: "Americano", desc: "Espresso + air panas, bold & clean", price: 32000 },
-      { name: "Latte", desc: "Espresso + steamed milk, tekstur smooth", price: 38000, highlight: true },
-      { name: "Cappuccino", desc: "Espresso, milk foam, sedikit cinnamon", price: 38000 },
-      { name: "Matcha Latte", desc: "Ceremonial matcha, oat milk, house sweetener", price: 42000, highlight: true },
-      { name: "Taro Latte", desc: "Taro homemade, fresh milk, purple aesthetic", price: 42000 },
-      { name: "Strawberry Milk", desc: "Strawberry fresh blend, full cream milk", price: 38000 },
-      { name: "Fresh Lemonade", desc: "Lemon segar, mint, sparkling water", price: 30000 },
-    ],
-  },
+const colorPalettes = [
+  { bgColor: "#F4EFE3", textColor: "#2A2620", badgeColor: "#C1652F" },
+  { bgColor: "#2F3B2C", textColor: "#F1ECD9", badgeColor: "#C1652F" },
+  { bgColor: "#5E5F4C", textColor: "#F1ECD9", badgeColor: "#C1652F" },
 ];
 
-function formatPrice(p: number) {
+const categories: MenuCategory[] = menuData.categories.map((cat: RawCategory, index: number) => ({
+  id: cat.id,
+  label: cat.title,
+  sectionBadge: cat.subtitle || `${cat.title} Sections`,
+  bgColor: colorPalettes[index % 3].bgColor,
+  textColor: colorPalettes[index % 3].textColor,
+  badgeColor: colorPalettes[index % 3].badgeColor,
+  items: cat.items,
+}));
+
+function formatPrice(p: number | null) {
+  if (p == null) return "Sesuai Pilihan";
   return "Rp " + p.toLocaleString("id-ID").replace(/,/g, ".");
 }
 
@@ -126,8 +69,8 @@ function SectionBadge({ label, badgeColor }: { label: string; badgeColor: string
 }
 
 export function MenuSection() {
-  const [activeId, setActiveId] = useState("bagels");
-  const active = categories.find((c) => c.id === activeId)!;
+  const [activeId, setActiveId] = useState(categories[0]?.id || "starters");
+  const active = categories.find((c) => c.id === activeId) || categories[0];
 
   return (
     <section id="menu">
@@ -162,11 +105,25 @@ export function MenuSection() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeId}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.35 }}
           style={{ backgroundColor: active.bgColor }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.1}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = offset.x;
+            const swipeThreshold = 50;
+            const currentIndex = categories.findIndex((c) => c.id === activeId);
+
+            if (swipe < -swipeThreshold && currentIndex < categories.length - 1) {
+              setActiveId(categories[currentIndex + 1].id);
+            } else if (swipe > swipeThreshold && currentIndex > 0) {
+              setActiveId(categories[currentIndex - 1].id);
+            }
+          }}
         >
           <div className="max-w-6xl mx-auto px-6 py-16">
             {/* Section badge */}
@@ -195,7 +152,7 @@ export function MenuSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.07 }}
                   className={`relative p-6 rounded-xl group transition-all duration-200 ${
-                    item.highlight ? "ring-1" : ""
+                    item.highlight ? "ring-1 ring-[#C1652F]/30" : ""
                   }`}
                   style={{
                     backgroundColor: item.highlight
@@ -203,7 +160,6 @@ export function MenuSection() {
                         ? "rgba(193,101,47,0.08)"
                         : "rgba(241,236,217,0.08)"
                       : "transparent",
-                    ringColor: "rgba(193,101,47,0.3)",
                   }}
                 >
                   {item.highlight && (
@@ -243,7 +199,7 @@ export function MenuSection() {
                       lineHeight: 1.6,
                     }}
                   >
-                    {item.desc}
+                    {item.description}
                   </p>
                   <p
                     style={{

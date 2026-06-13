@@ -30,7 +30,7 @@ export function Footer() {
           {/* Links */}
           <div className="flex flex-col items-center md:items-end gap-4">
             <a
-              href="https://instagram.com/maniswara_"
+              href="https://www.instagram.com/maniswara.soc/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#F1ECD9]/50 hover:text-[#F1ECD9] transition-colors"

@@ -1,0 +1,351 @@
+{
+  "categories": [
+    {
+      "id": "starters",
+      "title": "To Awaken Your Palate",
+      "subtitle": "A Perfect Start",
+      "items": [
+        {
+          "name": "Croque Madame",
+          "price": 38000,
+          "description": "Sourdough | Poach Egg | Cheese | Smoked Beef | Mushroom Sauce | Béchamel sauce | Mix Salad"
+        },
+        {
+          "name": "Mix Platter",
+          "price": 35000,
+          "description": "Onion Ring | Potato Wedges | Chicken Finger | Tomato Sauce & Chili Sauce"
+        },
+        {
+          "name": "Modern Corn Fritters",
+          "price": 22000,
+          "description": "Sweet Corn | Salad | Corn Pure | Tomato Sauce"
+        },
+        {
+          "name": "Modern Croquette",
+          "price": 30000,
+          "description": "Mash Potato | Ground Beef | Mozzarella Cheese | Pesto Mayo Sauce"
+        }
+      ]
+    },
+    {
+      "id": "pasta",
+      "title": "Pasta Sections",
+      "items": [
+        {
+          "name": "Spicy Tuna",
+          "price": 38000,
+          "description": "Spaghetti | Red Chili | Bawang Cincang | Parsley Flake | Tuna Chunk"
+        },
+        {
+          "name": "Bolognese",
+          "price": 40000,
+          "description": "Spaghetti | Ground Beef Tomato Sauce | Mix Italian Herbs"
+        },
+        {
+          "name": "Aglio Olio",
+          "price": 35000,
+          "description": "Spaghetti | Olive Oil | Bawang Putih Cincang | Chili Flake | Smoked Beef",
+          "options": {
+            "label": "Spicy Level",
+            "choices": ["Level 1", "Level 2", "Level 3"]
+          }
+        },
+        {
+          "name": "Carbonara",
+          "price": null,
+          "description": "Spaghetti | Carbonara Sauce | Parmesan | Black Pepper | Protein",
+          "options": {
+            "label": "Opsi Protein",
+            "choices": [
+              { "name": "Salmon", "price": 78000 },
+              { "name": "Chicken", "price": 48000 },
+              { "name": "Smoked Beef", "price": 48000 }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "breakfast",
+      "title": "Simple Mornings, Exceptional Flavors",
+      "subtitle": "Breakfast Menu",
+      "items": [
+        {
+          "name": "French Toast Tiramisu",
+          "price": 38000,
+          "description": "French Toast | Tiramisu Cream"
+        },
+        {
+          "name": "French Toast",
+          "price": 30000,
+          "description": "French Toast | Butter | Maple Syrup"
+        },
+        {
+          "name": "French Toast Banana Choco",
+          "price": 32000,
+          "description": "French Toast | Pisang | Coklat | Granola"
+        }
+      ]
+    },
+    {
+      "id": "pancake",
+      "title": "Pancake Sections",
+      "items": [
+        {
+          "name": "O.G Pancake",
+          "price": 35000,
+          "description": "Pancake | Butter | Maple Syrup"
+        },
+        {
+          "name": "Blueberry Pancake",
+          "price": 38000,
+          "description": "Pancake | Blueberry Sauce"
+        },
+        {
+          "name": "Mix Fruit Pancake",
+          "price": 38000,
+          "description": "Pancake | Mix Fruits"
+        }
+      ]
+    },
+    {
+      "id": "sandwich",
+      "title": "Sandwich Sections",
+      "items": [
+        {
+          "name": "Beef Chasu",
+          "price": 58000,
+          "description": "Sourdough Sandwich | Tar Tar Aioli | Japanese Corned Beef Tare Sauce | Pickled Carrot"
+        },
+        {
+          "name": "Chicken Marinara",
+          "price": 35000,
+          "description": "Crispy Chicken | Marinara Sauce | Iceberg Lettuce | Cheese Sauce | Bechamel"
+        },
+        {
+          "name": "Beef Patty Caramelized Onion",
+          "price": 45000,
+          "description": "Beef Patty | Iceberg Lettuce | Tomato | Pickled | Slice Cheddar | Caramelized Onion"
+        },
+        {
+          "name": "Grilled Cheesy Chicken",
+          "price": 38000,
+          "description": "Sourdough Sandwich | Pan Seared Garlic Cheesy Chicken Breast | Tar Tar Aioli | Caramelized Onion"
+        },
+        {
+          "name": "Chicken Garlic Chili Oil",
+          "price": 38000,
+          "description": "Sourdough Sandwich | Iceberg Lettuce | Pickles | Spicy Crispy Chicken Breast | Bechamel Sauce"
+        },
+        {
+          "name": "Cheesy Caramelized Onion",
+          "price": 38000,
+          "description": "Sourdough Sandwich | Bechamel Sauce | Keju Parmesan | Mozzarella | Cedar | Caramelized Onion | Aioli Sauce"
+        }
+      ]
+    },
+    {
+      "id": "soulful-plates",
+      "title": "Soulful Plates",
+      "subtitle": "Maniswara Signature",
+      "items": [
+        {
+          "name": "Mac n' Cheese with Crispy Chicken Finger",
+          "price": 45000,
+          "description": "Pasta Maccaroni | Cheese Sauce | Crispy Spicy Chicken Finger"
+        },
+        {
+          "name": "Chicken Parmegiana",
+          "price": 55000,
+          "description": "Chicken Breast | Pronto (Tomato Sauce) | Mozzarella | Mix Salad | Mash Potato"
+        },
+        {
+          "name": "Salmon Steak with Roasted Vegetable",
+          "price": 110000,
+          "description": "Salmon Fillet | Mix Vegetable",
+          "options": [
+            {
+              "label": "Opsi Sauce",
+              "choices": ["White Mushroom", "Gravy Sauce"]
+            },
+            {
+              "label": "Opsi Karbo",
+              "choices": ["Mashed Potato", "Potato Wedges"]
+            }
+          ]
+        },
+        {
+          "name": "Pan Seared Chicken Steak",
+          "price": 45000,
+          "description": "Chicken Breast | Roasted Vegetable | Mashed Potato",
+          "options": {
+            "label": "Opsi Sauce",
+            "choices": ["White Mushroom", "Gravy Sauce"]
+          }
+        },
+        {
+          "name": "Chicken Cordon Bleu",
+          "price": 55000,
+          "description": "Chicken Breast | Smoked Beef | Pronto Sauce | Mozzarella Cheese | Gravy Sauce | Mash Potato"
+        },
+        {
+          "name": "Swedish Meatball",
+          "price": 48000,
+          "description": "Mash Potato | Gravy Sauce | Meat Ball"
+        }
+      ]
+    },
+    {
+      "id": "wings",
+      "title": "Wings Lovers",
+      "subtitle": "Savory Delights - Fresh, Crispy & Satisfying",
+      "items": [
+        {
+          "name": "BBQ Chicken Wings",
+          "price": 38000,
+          "description": "Chicken Wings (6pcs) | BBQ Sauce"
+        },
+        {
+          "name": "Cheesy Chicken Wings",
+          "price": 38000,
+          "description": "Chicken Wings (6pcs) | Cheese Sauce | Parmesan Cheese"
+        },
+        {
+          "name": "Spicy Sriracha Wings",
+          "price": 38000,
+          "description": "Chicken Wings (6pcs) | Sriracha Sauce"
+        }
+      ]
+    },
+    {
+      "id": "salad",
+      "title": "Salad Sections",
+      "items": [
+        {
+          "name": "Tokyo Beef Salad",
+          "price": 32000,
+          "description": "Selada Hijau | Timun Kyuri | Wortel | Tomat Cherry | Teriyaki Beef Shortplate | Sesame Dressing"
+        },
+        {
+          "name": "Caesar Salad",
+          "price": 28000,
+          "description": "Iceberg Lettuce | Romaine | Selada Hijau | Tomato | Chicken Breast | Aioli Dressing | Crouton Panggang | Parmesan Cheese"
+        }
+      ]
+    },
+    {
+      "id": "fish",
+      "title": "Fish Lovers",
+      "items": [
+        {
+          "name": "Herb Crust Dori",
+          "price": 45000,
+          "description": "Fillet Dori | Campuran Rempah | Parsley | Panko | Mashed Potato | Mix Salad"
+        },
+        {
+          "name": "Fish n Chips",
+          "price": 48000,
+          "description": "Fillet Ikan Dori | Potato Wedges | Tartar Sauce Yang Segar"
+        }
+      ]
+    },
+    {
+      "id": "espresso",
+      "title": "Espresso Based",
+      "subtitle": "Morning Brews & Refreshments",
+      "items": [
+        { "name": "Black", "price": 24000, "description": "Ice / Hot" },
+        { "name": "Latte", "price": 25000, "description": "Ice / Hot" },
+        { "name": "Cappucino", "price": 26000, "description": "Ice / Hot" },
+        { "name": "Mocca", "price": 26000, "description": "Ice / Hot" },
+        { "name": "Magic", "price": 27000, "description": "Hot" },
+        { "name": "Dirty Latte", "price": 30000, "description": "Ice" },
+        { "name": "Butterschoth Seasalt", "price": 35000, "description": "Ice" },
+        { "name": "Kopi Susu Maniswara", "price": 27000, "description": "Ice" },
+        { "name": "The OG", "price": 25000, "description": "Ice" },
+        { "name": "Mont Blanc", "price": 30000, "description": "Ice" },
+        { "name": "Tiramisu Delight", "price": 35000, "description": "Ice" }
+      ]
+    },
+    {
+      "id": "black-series",
+      "title": "Black Series",
+      "subtitle": "Iced Only",
+      "items": [
+        { "name": "Berry Hills", "price": 28000, "description": "" },
+        { "name": "Madona", "price": 28000, "description": "" },
+        { "name": "Fruit Fantasy", "price": 28000, "description": "" },
+        { "name": "Manggo Popstar", "price": 28000, "description": "" }
+      ]
+    },
+    {
+      "id": "tea-series",
+      "title": "Tea Series",
+      "items": [
+        { "name": "Tea of Lychee", "price": 23000, "description": "" },
+        { "name": "Tea of Lemonade", "price": 23000, "description": "" },
+        { "name": "Tea of Berry", "price": 23000, "description": "" },
+        { "name": "Blossom Peach", "price": 25000, "description": "" }
+      ]
+    },
+    {
+      "id": "chocolate-series",
+      "title": "Chocolate Series",
+      "items": [
+        { "name": "Choco OG", "price": 30000, "description": "" },
+        { "name": "Choco Vanilla Cream", "price": 32000, "description": "" },
+        { "name": "Choco Butterschotch Cream", "price": 32000, "description": "" }
+      ]
+    },
+    {
+      "id": "matcha-series",
+      "title": "Matcha Series",
+      "items": [
+        { "name": "Matcha Corn Milk", "price": 35000, "description": "" },
+        { "name": "Ms. Grey", "price": 32000, "description": "" },
+        { "name": "Matcha OG", "price": 30000, "description": "" }
+      ]
+    },
+    {
+      "id": "smoothies",
+      "title": "Smoothies",
+      "items": [
+        { "name": "Berry Brizz", "price": 28000, "description": "" },
+        { "name": "Yellow Mellow Mango", "price": 28000, "description": "" }
+      ]
+    },
+    {
+      "id": "bingsoo",
+      "title": "Bingsoo",
+      "items": [
+        { "name": "Sweet Snow", "price": 40000, "description": "" },
+        { "name": "My Choco Romance", "price": 38000, "description": "" }
+      ]
+    },
+    {
+      "id": "mocktail-coffee",
+      "title": "Mocktail Coffee",
+      "items": [
+        { "name": "The Apple on My Ice", "price": 30000, "description": "" },
+        { "name": "Rush Hour", "price": 30000, "description": "" },
+        { "name": "Risivi Moonlight", "price": 30000, "description": "" }
+      ]
+    },
+    {
+      "id": "mocktail-non-coffee",
+      "title": "Mocktail Non Coffee",
+      "items": [
+        { "name": "Getsemani", "price": 32000, "description": "" },
+        { "name": "The Virgin", "price": 27000, "description": "" },
+        { "name": "Apple Strudle", "price": 30000, "description": "" }
+      ]
+    },
+    {
+      "id": "others",
+      "title": "Others",
+      "items": [
+        { "name": "Air Mineral", "price": 15000, "description": "" }
+      ]
+    }
+  ]
+}
